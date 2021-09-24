@@ -1,0 +1,30 @@
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.logo-nav {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+}
+
+
+.menu {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+
+.carousel-indicators {
+    position: absolute;
+    top: 105%;
+}
+
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
