@@ -34,16 +34,16 @@
           <div class="collapse navbar-collapse menu" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#acercaDeMi">Inicio</a>
+                <a class="nav-link text-white" aria-current="page" href="#acercaDeMi">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#trabajos">Recetas</a>
+                <a class="nav-link text-white" href="#trabajos">Recetas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contacto">Nosotros</a>
+                <a class="nav-link text-white" href="#contacto">Nosotros</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="#contacto">Contacto</a>
+                <a class="nav-link text-white" href="#contacto">Contacto</a>
               </li> 
             </ul>
           </div>
@@ -52,19 +52,28 @@
 
 <!-- principal -->
     <section>
-        <div class="container text-start text-dark my-5 pt-5">
+        <div class="container text-center text-md-start text-dark my-5 pt-5">
+            <hr class="d-md-none" style="height: 2px; background-color: #333;">
             <div class="row">
                 <div class="col-md-6">
                     <img class="img-fluid" src="/assets/img/principal.jpg" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 my-3">
                     <h1>PIZZA AL ESTILO CHICAGO CON ESPINACAS Y CHAMPIÑOES</h1>
                     <hr style="height: 2px; background-color: #333;">
                     <p>110 MIN / 6 A 8 PORCIONES</p>
-                    <section class="mt-5 pt-4">
-                        <button type="button" class="btn btn-light btn-outline-dark btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Presiona para enviar a tu correo">
+                    <section class="mt-5 pt-4 ">
+                        <button id="btn-correo" type="button" class="btn btn-light btn-outline-dark btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Presiona para enviar a tu correo">
                         Enviar por correo
                         </button>
+                        <!-- script para función alert on click correo -->
+                        <script>
+                            $(document).ready(function () {
+                                $("#btn-correo").click(function () {
+                                    alert("El correo fue enviado correctamente...");
+                                });
+                            });
+                        </script>
                         <button type="button" class="btn btn-light btn-outline-dark btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Agrega esta receta a tus favoritos">
                         Añadir a favoritos
                         </button>
@@ -111,10 +120,10 @@
     
     <!-- recetas -->
     <section>
-        <div class="container text-start text-dark my-5 pt-5">
+        <div class="container text-start text-dark my-3 pt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="fw-bold text-decoration-underline">INGREDIENTES</p>
+                    <p id="txtRed" class="fw-bold text-decoration-underline">INGREDIENTES</p>
                     <P>Masa</P>
                     <p>20 gr de levadura seca instantánea</p>
                     <p>1 cucharadita de azúcar</p> 
@@ -139,7 +148,7 @@
                     <p>4 cucharadas queso parmesano</p>                     
                 </div>
                 <div class="col-md-6">
-                    <p class="fw-bold text-decoration-underline">PREPARACIÓN</p>
+                    <p id="txtRed2" class="fw-bold text-decoration-underline">PREPARACIÓN</p>
                     <p>1. Para la masa, disolver la levadura y el azúcar en agua tibia en un bol grande. Dejar reposar 2 minutos. Agregar el aceite, la harina de maíz, sal y 400gr de harina. Mezclar bien. Amasar y agregar el resto de harina, la cantidad necesaria para tener una masa blanda. Poner en el mesón y amasar por 5 minutos o hasta tener una masa lisa y elástica (agregar harina en el mesón a medida que se va amasando para que la masa no se pegue) . Poner la masa en un bol aceitado, tapar con un paño de cocina limpio y dejar reposar hasta que la masa duplique su volumen (leudar). Golpear la masa para que baje y luego dejar leudar por 40 minutos adicionales.</p>
                     <p>2. Mientras tanto preparar la salsa: Calentar 4 cucharadas de aceite en una olla a fuego medio. Agregar la cebolla, Orégano Gourmet, Albahaca Gourmet, sal y cocinar hasta que la cebolla esté dorada. Agregar el ajo y cocinar por 30 segundos. Agregar los tomates junto al jugo del tarro, a la mezcla de cebolla. Agregar el azúcar y cocinar hasta que la mezcla se haya reducido y espesado, como 30 minutos. Sazonar con sal y pimienta a gusto. Reservar.</p> 
                     <p>3. Relleno: Cocinar las chalotas en el aceite de oliva hasta que estén transparentes. Agregar los champiñones y las espinacas, cocinar hasta que estén cocidos y se haya evaporado todo el líquido que hayan votado los vegetales. Reservar.</p> 
@@ -150,39 +159,78 @@
                 </div>
             </div>
         </div>
+
+    <!-- script para cambio de color con dblclick -->
+    <script>
+        $(document).ready(function(){
+          $("#txtRed").dblclick(function(){
+            $(this).css('color', 'red');
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $("#txtRed2").dblclick(function(){
+            $(this).css('color', 'red');
+          });
+        });
+    </script>
+
     </section>
+    
    
     <div class="container my-4">
         <hr style="height: 2px; background-color: #333;">
         <p class="h3 fw-bold text-center">RECETAS RELACIONADAS</p>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 my-3">
                 <div class="card" style="width: 18rem;">
                     <img src="/assets/img/recipe-card-1.png" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">PANQUEQUES CON MANJARS</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 id="panqueque" class="card-title">PANQUEQUES CON MANJARS</h5>
+                      <p id="panqueque-cont" class="card-text" style="display: none">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
+                <!-- funcion toogle para mostrar o esconder contenido -->
+                <script>
+                    $( "#panqueque" ).click(function() {
+                      $( "#panqueque-cont" ).toggle( "slow" );
+                    });
+                </script>
             </div>
-            <div class="col-md-4">
+
+            <div class="col-md-4 my-3">
                 <div class="card" style="width: 18rem;">
                     <img src="/assets/img/recipe-card-2.png" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">TIRAMISÚ</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 id="tiramisu" class="card-title">TIRAMISÚ</h5>
+                      <p id="tiramisu-cont" class="card-text" style="display: none">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
+                <!-- funcion toogle para mostrar o esconder contenido -->
+                <script>
+                    $( "#tiramisu" ).click(function() {
+                      $( "#tiramisu-cont" ).toggle( "slow" );
+                    });
+                </script>
             </div>
-            <div class="col-md-4">
+
+            <div class="col-md-4 my-3">
                 <div class="card" style="width: 18rem;">
                     <img src="/assets/img/recipe-card-3.png" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">PLATEADA</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 id="plateada" class="card-title">PLATEADA</h5>
+                      <p id="plateada-cont" class="card-text" style="display: none">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
+                <!-- funcion toogle para mostrar o esconder contenido -->
+                <script>
+                    $( "#plateada" ).click(function() {
+                      $( "#plateada-cont" ).toggle( "slow" );
+                    });
+                </script>
             </div>
+
         </div>
     </div>
 
